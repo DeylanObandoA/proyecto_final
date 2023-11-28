@@ -203,7 +203,7 @@ configured (by @joshpencheon)
 
 * bug fixes
   * Fix syntax for MRI 2.5.0. (by @pat)
-  * Validations were being ignored on singup in the `Trackable#update_tracked_fields!` method. (by @AshleyFoster)
+  * Validations were being ignored on Singup in the `Trackable#update_tracked_fields!` method. (by @AshleyFoster)
   * Do not modify options for `#serializable_hash`. (by @guigs)
   * Email confirmations were being sent on sign in/sign out for application using `mongoid` and `mongoid-paperclip` gems. This is because previously we were checking if a model is from Active Record by checking if the method `after_commit` was defined - since `mongoid` doesn' have one - but `mongoid-paperclip` gem does define one, which cause this issue. (by @fjg)
 

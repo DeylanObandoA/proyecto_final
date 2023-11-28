@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import CourseCard from "../../components/CourseCard/coursecard.jsx";
-import Navbar  from "../../components/Navbar/navbar.jsx";
+import CourseCard from "../../components/CourseCard/CourseCard.jsx";
+import Navbar  from "../../components/Navbar/Navbar.jsx";
+import "./Course.css"
 
 const Course_url = "http://localhost:3001/api/v1/courses"
 

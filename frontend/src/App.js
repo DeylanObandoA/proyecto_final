@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 import './App.css';
-import Course from './pages/Course/course.jsx';
-import User from './components/User/user.jsx';
+import Course from './pages/Course/Course.jsx';
+import User from './components/User/User.jsx';
 import NotFound from './pages/NotFound/notfound.jsx';
+import  Profile from './pages/Profile/Profile.jsx'
 
 const App = () => {
   const [currUser, setCurrUser] = useState(null);
@@ -17,7 +18,7 @@ const App = () => {
         />
         <Route path="/user" element={<User currUser={currUser} setCurrUser={setCurrUser} />} />
         <Route path='/course' element={<Course />} />
-        <Route path='/user' element={<User />} />
+        <Route path='/profile' element={<Profile />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </Router>

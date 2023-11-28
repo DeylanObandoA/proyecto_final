@@ -15,7 +15,6 @@ const PrivateText = ({ currUser }) => {
       const tokenSegments = token.split('.');
 
       if (tokenSegments.length !== 3) {
-        // console.error("El token no tiene la estructura esperada.");
         return;
       }
 

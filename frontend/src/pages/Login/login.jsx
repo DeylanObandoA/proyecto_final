@@ -1,11 +1,15 @@
 import React, { useRef, useState } from "react";
-import './login.css'
+import './Login.css'
+
+
 const Login = ({ setCurrUser, setShow }) => {
+
   const formRef = useRef();
   const [error, setError] = useState(null);
 
   const login = async (userInfo) => {
     const url = "http://localhost:3001/login";
+
     try {
       const response = await fetch(url, {
         method: "post",
@@ -15,6 +19,7 @@ const Login = ({ setCurrUser, setShow }) => {
         },
         body: JSON.stringify(userInfo),
       });
+
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || "Error desconocido en el servidor");
       localStorage.setItem("token", response.headers.get("Authorization"));

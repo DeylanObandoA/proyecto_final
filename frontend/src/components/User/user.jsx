@@ -1,38 +1,36 @@
-import Login from '../../pages/Login/login.jsx'
-import Signup from '../../pages/Signup/signup.jsx';
-import Logout from '../../pages/Logout/logout.jsx'
-import PrivateText from '../../pages/PrivateText/privatetext.jsx';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { useEffect, useState } from "react";
-import Navbar from '../Navbar/navbar.jsx';
-import "./user.css"
+import React from 'react';
+import Logout from '../../pages/Logout/Logout.jsx';
+import { useState } from "react";
+import Login from '../../pages/Login/Login.jsx';
+import Signup from '../../pages/Signup/Signup.jsx';
+import Navbar from '../Navbar/Navbar.jsx';
+import "./User.css";
+
 const User = ({ currUser, setCurrUser }) => {
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(true);
 
-  if (currUser)
-
-    return (
-      <header>
+  return (
+    <header>
       <body className='body3'>
         <Navbar></Navbar> 
         <br />
-      <div>
-        Welcome to Courses Finder {currUser.name}
-        <PrivateText currUser={currUser} />
-        <Logout setCurrUser={setCurrUser} />
-      </div>
-    </body>
-      </header>
-    )
-  return (
-    <div>
-      {show ?
-        <Login setCurrUser={setCurrUser} setShow={setShow} />
-        :
-        <Signup setCurrUser={setCurrUser} setShow={setShow} />
-      }
-    </div>
-  )
-}
+        <div>
+          {currUser ? (
+            <div>
+              <p> Bienvenido a tu perfil {currUser.name}</p>
+              <Logout setCurrUser={setCurrUser} />
+            </div>
+          ) : (
+            show ? (
+              <Login setCurrUser={setCurrUser} setShow={setShow} />
+            ) : (
+              <Signup setCurrUser={setCurrUser} setShow={setShow} />
+            )
+          )}
+        </div>
+      </body>
+    </header>
+  );
+};
 
 export default User;

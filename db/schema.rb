@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_23_201225) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_27_194647) do
   create_table "addresses", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "province"
     t.string "canton"
@@ -53,7 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_23_201225) do
     t.boolean "favorite"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "institution_id"
+    t.bigint "institution_id", null: false
     t.index ["institution_id"], name: "index_courses_on_institution_id"
   end
 
@@ -100,8 +100,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_23_201225) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "jti"
-    t.index ["jti"], name: "index_users_on_jti"
   end
 
   create_table "users_roles", id: false, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|

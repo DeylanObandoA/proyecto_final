@@ -1,38 +1,25 @@
 import React from "react";
-import "./coursecard.css";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import "./CourseCard.css";
 
 function CourseCard(props) {
   return (
     <div>
-      <section className= "course-container courses body4 product-container product-1">
+      <Card className="text-center">
         {props.courses &&
           props.courses.map((course) => (
             <div className="card" key={course.id}>
-              <div className="photo"></div>
-              <div className="content">
-                <div className="title">
-                  {course.name}
-                </div>
-                <div className="bg-title">
-                  {course.name}
-                </div>
-                <div className="feature size">
-                  <div>size :</div>
-                  <span>S</span>
-                  <span>M</span>
-                  <span>L</span>
-                </div>
-                <div className="feature color">
-                  <div>color :</div>
-                  <span>pink</span>
-                  <span className="tt">blue</span>
-                  <span className="ttt">green</span>
-                </div>
-                <button className="btn-buy">buy now</button>
-              </div>
+              <Card.Header>Featured</Card.Header>
+              <Card.Body>
+                <Card.Title>{course.name}</Card.Title>
+                <Card.Text>{course.description}</Card.Text>
+                <Button variant="primary">Go somewhere</Button>
+              </Card.Body>
+              <Card.Footer className="text-muted">{course.registration_day}</Card.Footer>
             </div>
           ))}
-      </section>
+      </Card>
     </div>
   );
 }
