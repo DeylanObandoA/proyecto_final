@@ -1,0 +1,39 @@
+.main-container {
+    display: flex;
+}
+
+.content-container {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.boxcourse-info {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.info-container {
+    text-align: center;
+}
+
+.info-container h2 {
+    margin: 10px 0;
+    font-size: 1.5em;
+}
+
+.info-container p {
+    margin: 5px 0;
+    font-size: 1,5em;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+li {
+    margin-bottom: 5px;
+}

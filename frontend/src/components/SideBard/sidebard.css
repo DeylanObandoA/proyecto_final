@@ -1,0 +1,142 @@
+@font-face {
+    font-family: "sidebar";
+    src: url("../../../public/fonts/Roboto-Medium.ttf");
+}
+
+@font-face {
+    font-family: "lisidebar";
+    src: url("../../../public/fonts/Roboto-Regular.ttf");
+}
+.page-container {
+    display: flex;
+}
+
+.sidebar {
+    width: 270px;
+    background-color: #d7d7df ;
+    color: #121925;
+    padding: 15px;
+    transition: transform 0.3s ease;
+    transform: translateX(-250px);
+    box-shadow: 5px 5px 5px #35355e;
+}
+
+.sidebar-visible {
+    transform: translateX(0);
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    color: black;
+    text-decoration: none;
+}
+
+.sidebar button {
+    margin-bottom: 20px;
+    background-color: #8c84d8;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.sidebar button:hover {
+    background-color: #2a2a4b;
+    box-shadow: 4px 4px 4px #8c84d8;
+}
+
+.description {
+    font-family: "sidebar";
+}
+
+.boxlinks {
+    display: flex;
+    margin-top: 8%;
+}
+
+.linkhome {
+    display: flex;
+    margin-top: 18%;
+}
+
+.iconsidebar {
+    color: #44126b;
+}
+
+li {
+    font-family: "lisidebar";
+    list-style: none;
+    margin-left: 5%;
+    font-size: 20px;
+}
+
+.li:hover {
+    color: #c003f4;
+} 
+
+.toggling {
+    position: relative;
+    margin-left: 88%;
+}
+
+.cssidebar {
+    width: 80%;
+    margin-top: -20%;
+    position: relative;
+    border: none;
+    background: transparent;
+    --stroke-color: #35355e;
+    --ani-color: rgba(95, 3, 244, 0);
+    --color-gar: linear-gradient(90deg, #FF0080, #00E0FF, #3B52FF, #012B35);
+    letter-spacing: 3px;
+    font-size: 1.5em;
+    font-family: "sidebar";
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--stroke-color);
+}
+
+.hover-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    background: var(--color-gar);
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 200%;
+    overflow: hidden;
+    transition: all 1s;
+    animation: 8s ani infinite;
+    border-bottom: 2px solid transparent;
+}
+
+.cssidebar:hover .hover-text {
+    width: 105%;
+    border-bottom: 2px solid #c003f4;   
+    -webkit-text-stroke: 1px var(--ani-color);
+}
+
+@keyframes ani {
+    0% {
+        background-position: 0%;
+    }
+
+    50% {
+        background-position: 400%;
+    }
+
+    100% {
+        background-position: 0%;
+    }
+}

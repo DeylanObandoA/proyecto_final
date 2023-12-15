@@ -116,7 +116,7 @@ GEM
     erubi (1.12.0)
     factory_bot (6.4.2)
       activesupport (>= 5.0.0)
-    factory_bot_rails (6.4.0)
+    factory_bot_rails (6.4.2)
       factory_bot (~> 6.4)
       railties (>= 5.0.0)
     globalid (1.2.1)
@@ -282,6 +282,7 @@ GEM
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    will_paginate (4.0.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.6.12)
@@ -299,6 +300,7 @@ DEPENDENCIES
   factory_bot_rails
   importmap-rails
   jbuilder
+  jwt
   mysql2 (~> 0.5)
   pry-byebug (~> 3.10, >= 3.10.1)
   puma (~> 5.0)
@@ -315,6 +317,7 @@ DEPENDENCIES
   turbo-rails
   tzinfo-data
   web-console
+  will_paginate
 
 RUBY VERSION
    ruby 3.0.2p107

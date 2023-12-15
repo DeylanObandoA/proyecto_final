@@ -22,7 +22,7 @@ end
 
 # En tu controlador
 def allow_cross_origin_requests
-  headers['Access-Control-Allow-Origin'] = 'http://localhost:3000' # Ajusta esto según el origen de tu aplicación React
+  headers['Access-Control-Allow-Origin'] = 'http://localhost:3001' # Ajusta esto según el origen de tu aplicación React
   headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, DELETE, OPTIONS'
   headers['Access-Control-Allow-Headers'] = 'Origin, Content-Type, Accept, Authorization, Token'
   headers['Access-Control-Max-Age'] = '1728000'

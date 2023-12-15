@@ -1,0 +1,74 @@
+.background2 {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+}
+
+.login {
+  background-color: #605e8b; 
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.3), 0 16px 32px rgba(0, 0, 0, 0.4);
+  max-width: 400px;
+  width: 100%;
+}
+
+.input {
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  background: #212137;
+  color: #9e9acb;
+}
+
+.input:focus {
+  outline: none;
+  border: none;
+  box-shadow: 0 0 5px #605e8b, 0 0 10px #605e8b;
+}
+
+.submit {
+  border: 1px solid white;
+  background-color: #9145B6;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.submit:hover {
+  background-color: #212137;
+  box-shadow: 5px 5px 5px #9145B6;
+}
+
+.link {
+  padding: 5%;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 10px;
+  padding: 2px;
+  background-color: #9145B6;
+  border: 1px solid white;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.gotologin {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.icon {
+  margin-top: 1.8%;
+}

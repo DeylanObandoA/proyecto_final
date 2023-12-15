@@ -1,29 +1,20 @@
-import Login from '../../pages/Login/login.jsx'
-import Signup from '../../pages/Signup/signup.jsx';
-import Logout from '../../pages/Logout/logout.jsx'
-import PrivateText from '../../pages/PrivateText/privatetext.jsx';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { useEffect, useState } from "react";
-import Navbar from '../Navbar/navbar.jsx';
-import "./user.css"
+import Signup from '../Signup/Signup.jsx';
+import Logout from '../Logout/Logout.jsx';
+import PrivateText from "../PrivateText/Privatetext.jsx"
+import Login from '../Login/Login.jsx';
+import { useState } from "react";
+
 const User = ({ currUser, setCurrUser }) => {
   const [show, setShow] = useState(true)
-
   if (currUser)
-
     return (
-      <header>
-      <body className='body3'>
-        <Navbar></Navbar> 
-        <br />
       <div>
-        Welcome to Courses Finder {currUser.name}
+        Hello {currUser.email}
         <PrivateText currUser={currUser} />
         <Logout setCurrUser={setCurrUser} />
       </div>
-    </body>
-      </header>
     )
+
   return (
     <div>
       {show ?
@@ -33,6 +24,6 @@ const User = ({ currUser, setCurrUser }) => {
       }
     </div>
   )
-}
+};
 
-export default User;
+export default User

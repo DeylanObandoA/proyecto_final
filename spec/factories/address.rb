@@ -4,5 +4,6 @@ FactoryBot.define do
     canton {'puntarenas'}
     district {'puntarenas'}
     neighborhood {'barrio del carmen'}
+    zip_code {60101}
   end   
 end

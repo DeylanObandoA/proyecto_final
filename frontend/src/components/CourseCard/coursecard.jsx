@@ -1,38 +1,32 @@
 import React from "react";
-import "./coursecard.css";
+import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
+import "./CourseCard.css";
 
-function CourseCard(props) {
+const CourseCard = (props) => {
+
   return (
-    <div>
-      <section className= "course-container courses body4 product-container product-1">
-        {props.courses &&
-          props.courses.map((course) => (
-            <div className="card" key={course.id}>
-              <div className="photo"></div>
-              <div className="content">
-                <div className="title">
-                  {course.name}
-                </div>
-                <div className="bg-title">
-                  {course.name}
-                </div>
-                <div className="feature size">
-                  <div>size :</div>
-                  <span>S</span>
-                  <span>M</span>
-                  <span>L</span>
-                </div>
-                <div className="feature color">
-                  <div>color :</div>
-                  <span>pink</span>
-                  <span className="tt">blue</span>
-                  <span className="ttt">green</span>
-                </div>
-                <button className="btn-buy">buy now</button>
-              </div>
-            </div>
-          ))}
-      </section>
+    <div className="course-card-container">
+      {props.courses && props.courses.map((course) => (
+        <Card key={course.id} className="text-center">
+          <Card.Header>
+            <Link to={`/edit-course/${course.id}`} className="links" >
+              Edit
+            </Link>
+            <Link to={`/delete-course/${course.id}`} className="links" >
+              Delete
+            </Link>
+          </Card.Header>
+          <Card.Body>
+            <Card.Title>{course.name}</Card.Title>
+            <Card.Text>{course.description}</Card.Text>
+            <Link to={`/course/${course.id}`} className="btnshow" >
+              Ver información completa
+            </Link>
+          </Card.Body>
+          <Card.Footer className="text-muted">{course.registration_day}</Card.Footer>
+        </Card>
+      ))}
     </div>
   );
 }

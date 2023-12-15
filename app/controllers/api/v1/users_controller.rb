@@ -58,7 +58,7 @@ end
 
   # Only allow a list of trusted parameters through.
   def user_params
-    params.require(:user).permit(:name,:age,:email, :password)
+    params.require(:user).permit(:name, :birthdate, :email, :password)
   end
 
   # def make_admin

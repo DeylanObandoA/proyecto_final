@@ -11,12 +11,20 @@ class Users::SessionsController < Devise::SessionsController
   # POST /resource/sign_in
   def create
     puts "++++++++++++++++++ estoy aqui "
-    super
+    super do |user|
+      if user.persisted?
+        token = JWT.encode({ user_id: user.id }, 'your_secret_key', 'HS256')
+        render json: { token: token, user: user }
+      else
+        render json: { error: 'Credenciales inválidas' }, status: :unauthorized
+      end
+    end
   end
 
   # DELETE /resource/sign_out
   def destroy
     super
+    render json: { message: 'Logged out successfully.' }
   end
 
   private
@@ -33,7 +41,7 @@ class Users::SessionsController < Devise::SessionsController
 
   # # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_in_params
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email, :password, :birthdate])
   end
   
 end

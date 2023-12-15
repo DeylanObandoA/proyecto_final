@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_23_201225) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_07_164634) do
   create_table "addresses", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "province"
     t.string "canton"
@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_23_201225) do
     t.string "neighborhood"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "zip_code"
   end
 
   create_table "branches", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -48,12 +49,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_23_201225) do
   create_table "courses", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.datetime "registration_day"
+    t.date "registration_day"
     t.string "requirement"
     t.boolean "favorite"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "institution_id"
+    t.bigint "institution_id", null: false
     t.index ["institution_id"], name: "index_courses_on_institution_id"
   end
 
@@ -92,7 +93,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_23_201225) do
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
-    t.string "age"
+    t.datetime "birthdate"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

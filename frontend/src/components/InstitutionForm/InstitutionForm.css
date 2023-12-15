@@ -1,0 +1,71 @@
+@font-face {
+    font-family: "instrutions";
+    src: url("../../../public/fonts/Classyvogueregular.ttf");
+}
+
+.main-container {
+    display: flex;
+}
+
+.form-container {
+    width: 100%;
+}
+
+.form {
+    font-family: "instrutions";
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 5% 20%;
+    border: 1px solid black;
+}
+
+.from-infoofcourse {
+    margin-bottom: 20px;
+}
+
+.instrutions {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.datarelations {
+    font-family: "instrutions";
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.createinfo-relations {
+    font-family: "instrutions";
+    background: linear-gradient(to right, #a155c0, #44126b);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.createinfo-relations:hover {
+    background: linear-gradient(to right, #44126b, #a155c0);
+}
+
+.error-message {
+    color: red;
+    margin-top: 5px;
+}
+
+@media only screen and (max-width: 750px) {
+    .form {
+        padding: 5% 2%;
+    }
+
+    .instrutions {
+        margin-bottom: 3px;
+    }
+
+    .datarelations {
+        padding: 8px;
+    }
+}

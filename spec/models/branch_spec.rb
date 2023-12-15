@@ -11,6 +11,12 @@ RSpec.describe Branch, type: :model do
     expect(branch).to_not be_valid
   end
 
+  it "validates maximum length of name" do
+    branch.name = "a" * 51
+    expect(branch).to_not be_valid
+    expect(branch.errors[:name]).to include("is too long (maximum is 50 characters)")
+  end
+
   it "is not valid without a course_id" do
     branch.course = nil 
     expect(branch).to_not be_valid

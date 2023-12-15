@@ -6,6 +6,8 @@ ruby "3.0.2"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.8"
 
+gem 'jwt'
+gem 'will_paginate'
 gem 'devise', '~> 4.2'
 gem 'pundit', '~> 2.3', '>= 2.3.1'
 gem 'rolify', '~> 5.2'
@@ -75,7 +77,6 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
-
 end
 
 group :test, :development do

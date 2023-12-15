@@ -1,50 +1,49 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-import './navbar.css'
+import { useState } from 'react';
+import Logoimg from '../Navbar/logotext.png';
+import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ onSearch }) => {
+  const [searchCourse, setSearchCourse] = useState('');
+
+  const normalizedText = (text) => {
+    return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  };
+
+  const handleSearchChange = (e) => {
+    const textUser = e.target.value;
+    setSearchCourse(normalizedText(textUser)); // Normalizar el texto antes de establecer el estado
+  };
+
+  const searchclick = () => {
+    onSearch(searchCourse);
+  };
+
+  const detectenter = (e) => {
+    e.key === 'Enter' && onSearch(searchCourse)
+  };
+
   return (
-    
-    <nav className="navbar navbar-expand-lg">
-    <div >  
-      <div className="container-fluid">
-      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <Link to="/course">Courses</Link>
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-              <Link to="/user">Home</Link>
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Link
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link disabled" aria-disabled="true">
-                Disabled
-              </a>
-            </li>
-          </ul>
-          <div className="d-flex" role="search">
-            <input
-              className="input"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="submit" type="submit">
-              Search
-            </button>
-          </div>
+    <>
+      <div className="navbar">
+        <img className='logoside' src={Logoimg} alt="logo" />
+        <div className="search">
+          <input
+            onChange={handleSearchChange}
+            className='textseeker'
+            type="text"
+            placeholder="categoria del curso, o nombre"
+            onKeyDown={detectenter}
+          />
+          <button
+            onClick={searchclick}
+            className='seeker'
+          >Buscar</button>
+        </div>
+        <div>
         </div>
       </div>
-    </div>
-    </nav>
+    </>
   );
 };
 

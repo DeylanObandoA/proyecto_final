@@ -3,7 +3,7 @@ class CreateCourses < ActiveRecord::Migration[7.0]
     create_table :courses do |t|
       t.string :name
       t.string :description 
-      t.datetime :registration_day
+      t.date :registration_day
       t.string :requirement
       t.boolean :favorite
       
